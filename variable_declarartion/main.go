@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 // package level variable declaration
@@ -13,6 +14,15 @@ var pack string = "package"
 // lower cass varialbe can access only on the package
 // variable length decide the life spane
 func main(){
+	
+	// declarationSyntax()
+	// variableCase()
+	// variableParsing()
+	// numericalTypes()
+	stringLiterals()
+}
+
+func declarationSyntax(){
 	// variable declaration assignment syntax 1
 	var var1 int
 	var1 = 12
@@ -27,12 +37,12 @@ func main(){
 	var3 := 32
 	pack := 32
 	fmt.Println(var3)
-
 	// var parsint float32 = "232"
 	// fmt.Println(parsint)
 	fmt.Println(pack)
+}
 
-
+func variableCase(){
 	//smaller length variables has lower life spane
 	var i int = 2
 	fmt.Println(i)
@@ -43,15 +53,112 @@ func main(){
 
 	// variable name with Acronyme should be all capitals
 
-	// var theUrl string = "3232323" // not recommended
-	// var theURL string = "3232323" // recommended
+	var theUrl string = "3232323" // not recommended
+	var theURL string = "3232323" // recommended
 
+	fmt.Println(theUrl)
+	fmt.Println(theURL)
+
+}	
+
+func variableParsing(){
 	// variable parsing
-
 	var flt float32 = 2111.11
 	fmt.Println(flt)
 
 	var inte int
 	inte = int(flt)
+	var intToFlt float32
+	intToFlt = float32(inte) * 11.11
 	fmt.Println(inte)
+	fmt.Printf("%v, %T\n", inte, inte)
+	fmt.Println(intToFlt)
+	fmt.Printf("%v, %T\n", intToFlt, intToFlt)
+
+
+	// number to string conversion
+
+	var str string
+	str = string(inte)
+	fmt.Printf("%v, %T\n", str, str)
+
+	// strconv package usage for converting numbers to string
+
+	str = strconv.Itoa(inte)
+	fmt.Printf("%v, %T", str, str)
+
+	// str = strconv.Itoa(intToFlt)
+	// str = strconv.ParseFloat(intToFlt, 32)
+	fmt.Printf("%v, %T", str, str)
+
+}
+
+func numericalTypes(){
+	// b1 := 1==2
+	// b2 := 1==1
+	// b3: true
+
+	a := 4232
+	b := 32
+	fmt.Println(a + b)
+	fmt.Println(a - b)
+	fmt.Println(a * b)
+	fmt.Println(a / b)
+	fmt.Println(a % b)
+
+	// bit operator
+	fmt.Println("Bitwise operations\n\n\n")
+	fmt.Println(a & b)
+	fmt.Println(a | b)
+	fmt.Println(a ^ b)
+	fmt.Println(a &^ b)
+	// fmt.Println(a % b)
+
+	// bit shift operator
+
+	a = 10
+
+	fmt.Println(a << 3)
+	fmt.Println(a >> 2)
+
+	// flaot literal
+
+	n:= 2.14
+	// var n float64 = 12.3
+	n = 13.7e72
+	n = 2.1E14
+
+	fmt.Println(n)
+
+	// complex numbers
+	var ib complex64 = 4- 0i
+
+	ia := 233+332i
+	fmt.Println(b)
+	fmt.Println(a)
+	fmt.Printf("%v, %T\n", real(ia), real(ia))
+	fmt.Printf("%v, %T\n", real(ib), real(ib))
+}
+
+func stringLiterals(){
+	a := "Hello How are you"
+	// a[3] = "u"
+	a2 := "I am fine"
+	fmt.Printf("%v, %T\n", string(a[3]), a[3])
+	fmt.Printf("%v, %T\n", a + a2, a + a2)
+
+	a3 := []byte(a)
+
+	fmt.Println(a3)
+
+	// runes
+
+	room := 'a'
+	var r rune = 'd'
+	// var r2 rune = "sd"
+
+	fmt.Printf("%v, %T\n", room, room)
+	fmt.Printf("%v, %T\n", r, r)
+	// fmt.Printf("%v, %T\n", r2, r2)
+
 }
