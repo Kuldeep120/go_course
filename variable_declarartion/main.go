@@ -19,7 +19,8 @@ func main(){
 	// variableCase()
 	// variableParsing()
 	// numericalTypes()
-	stringLiterals()
+	// stringLiterals()
+	constants()
 }
 
 func declarationSyntax(){
@@ -160,5 +161,54 @@ func stringLiterals(){
 	fmt.Printf("%v, %T\n", room, room)
 	fmt.Printf("%v, %T\n", r, r)
 	// fmt.Printf("%v, %T\n", r2, r2)
+
+}
+
+func constants(){
+	const myConst int = 32
+	// const a = 42
+	const (
+		a = iota + 100
+		b
+		c
+		d
+	)
+	fmt.Printf("%v, %T\n", myConst, myConst)
+	fmt.Printf("%v, %T\n", a, a)
+	fmt.Printf("%v, %T\n", b, b)
+	fmt.Printf("%v, %T\n", c, c)
+	fmt.Printf("%v, %T\n", d, d)
+
+	const (
+		_ = iota
+		e
+		f
+		g
+	)
+
+	fmt.Println(e)
+
+	const (
+		_ = iota
+		KB = 1 << (10 * iota)
+		MB
+		GB
+		TB
+		PB
+		EB
+		ZB
+		YB
+	)
+
+	fileSize := 4000000000.
+	fmt.Printf("%.2GB", fileSize/GB)
+	// fmt.Println(KB)
+	// fmt.Println(MB)
+	// fmt.Println(GB)
+	// fmt.Println(TB)
+	// fmt.Println(PB)
+	// fmt.Println(EB)
+	// fmt.Println(ZB)
+	// fmt.Println(YB)
 
 }
